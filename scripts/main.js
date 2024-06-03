@@ -1,11 +1,16 @@
 // Initialize the map
+console.log("Initializing Leaflet map...");
+
 var map = L.map('map').setView([33.7135478,73.0245259], 17); // Set initial center coordinates and zoom level
+
+console.log("Map initialized:", map);
 
 // Add a tile layer
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
+console.log("Tile layer added to map.");
 // Create a custom icon
 var customIcon = L.icon({
     iconUrl: 'scripts/images/marker-icon.png', // Path to your custom marker image
