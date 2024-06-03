@@ -6,10 +6,6 @@ document.getElementById('updateForm').addEventListener('submit', function(event)
     var longitude = document.getElementById('longitude').value;
     var info = document.getElementById('info').value;
 
-    console.log("Latitude:", latitude);
-    console.log("Longitude:", longitude);
-    console.log("Information:", info);
-
     // Create a new location object
     var newLocation = {
         coordinates: [parseFloat(latitude), parseFloat(longitude)],
@@ -21,15 +17,11 @@ document.getElementById('updateForm').addEventListener('submit', function(event)
         `
     };
 
-    console.log("New Location:", newLocation);
-
     // Add the new location to the map
     var popup = L.popup({
         maxWidth: 300
     }).setContent(newLocation.description);
-    var marker = L.marker(newLocation.coordinates, { icon: customIcon }).addTo(map).bindPopup(popup);
-
-    console.log("Marker:", marker);
+    L.marker(newLocation.coordinates, { icon: customIcon }).addTo(map).bindPopup(popup);
 
     // Reset form fields
     document.getElementById('latitude').value = '';
