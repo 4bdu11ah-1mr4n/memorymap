@@ -1,33 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
-    <link rel="stylesheet" href="styles/dashboard.css">
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
+    <link rel="stylesheet" href="styles/dashboard.css">
 </head>
 
 <body>
-    <h2>Update Map Location</h2>
+    <h2>Add Pin to Map</h2>
     <form id="updateForm">
         <label for="latitude">Latitude:</label>
-        <input type="text" id="latitude" name="latitude">
+        <input type="text" id="latitude" name="latitude" placeholder="Enter latitude">
         <br>
         <label for="longitude">Longitude:</label>
-        <input type="text" id="longitude" name="longitude">
+        <input type="text" id="longitude" name="longitude" placeholder="Enter longitude">
         <br>
         <label for="info">Information:</label>
-        <textarea id="info" name="info"></textarea>
+        <textarea id="info" name="info" placeholder="Enter information"></textarea>
         <br>
-        <label for="image">Upload Image:</label>
-        <input type="file" id="image" name="image">
-        <br>
-        <button type="submit">Update Map</button>
+        <button type="submit">Add Pin</button>
     </form>
 
+    <script src="scripts/leaflet.js"></script>
+    <script src="scripts/main.js"></script>
     <script src="scripts/dashboard.js"></script>
 </body>
 

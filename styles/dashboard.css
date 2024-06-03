@@ -36,9 +36,4 @@ button:hover {
     background-color: #45a049;
 }
 
-/* Style image upload input */
-input[type="file"] {
-    margin-bottom: 20px;
-}
-
 /* Add more styling as needed */
