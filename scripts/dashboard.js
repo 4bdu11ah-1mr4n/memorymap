@@ -40,7 +40,26 @@ document.getElementById('updateForm').addEventListener('submit', function(event)
 // Function to upload image
 function uploadImage(image) {
     return new Promise(function(resolve, reject) {
-        // Implement image upload logic here (e.g., using FormData and XMLHttpRequest)
-        // Upon successful upload, resolve with the image URL; otherwise, reject with an error
+        var formData = new FormData();
+        formData.append('image', image);
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'YOUR_IMAGE_UPLOAD_ENDPOINT_HERE', true);
+
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                var response = JSON.parse(xhr.responseText);
+                var imageUrl = response.imageUrl; // Assuming your server returns the image URL
+                resolve(imageUrl);
+            } else {
+                reject('Image upload failed');
+            }
+        };
+
+        xhr.onerror = function() {
+            reject('Image upload failed');
+        };
+
+        xhr.send(formData);
     });
 }
